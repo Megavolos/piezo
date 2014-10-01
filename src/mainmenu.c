@@ -1,4 +1,6 @@
 #include "mainmenu.h"
+
+
 u32 touch_time_count=0;
 u16 x_prev,y_prev;
 void draganddrop ()
