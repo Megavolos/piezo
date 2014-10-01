@@ -1,0 +1,9 @@
+.\bin\primitives.o: src\primitives.c
+.\bin\primitives.o: .\inc\primitives.h
+.\bin\primitives.o: .\CMSIS\DeviceSupport\ST\STM32F10x\stm32f10x.h
+.\bin\primitives.o: .\CMSIS\CoreSupport\core_cm3.h
+.\bin\primitives.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\bin\primitives.o: .\CMSIS\DeviceSupport\ST\STM32F10x\system_stm32f10x.h
+.\bin\primitives.o: .\CMSIS\stm32f10x_conf.h
+.\bin\primitives.o: .\inc\font.h
+.\bin\primitives.o: .\inc\lcdcmd.h

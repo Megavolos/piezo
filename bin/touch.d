@@ -1,0 +1,16 @@
+.\bin\touch.o: src\touch.c
+.\bin\touch.o: .\inc\touch.h
+.\bin\touch.o: .\CMSIS\DeviceSupport\ST\STM32F10x\stm32f10x.h
+.\bin\touch.o: .\CMSIS\CoreSupport\core_cm3.h
+.\bin\touch.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\bin\touch.o: .\CMSIS\DeviceSupport\ST\STM32F10x\system_stm32f10x.h
+.\bin\touch.o: .\CMSIS\stm32f10x_conf.h
+.\bin\touch.o: .\inc\misc_func.h
+.\bin\touch.o: .\SPL\inc\stm32f10x_spi.h
+.\bin\touch.o: .\SPL\inc\stm32f10x_gpio.h
+.\bin\touch.o: .\inc\primitives.h
+.\bin\touch.o: .\inc\font.h
+.\bin\touch.o: .\inc\lcdcmd.h
+.\bin\touch.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\bin\touch.o: .\SPL\inc\stm32f10x_exti.h
+.\bin\touch.o: .\inc\sram.h

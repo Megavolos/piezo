@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+".\bin\startup_stm32f10x_hd.o"
+".\bin\core_cm3.o"
+".\bin\system_stm32f10x.o"
+".\bin\stm32f10x_rcc.o"
+".\bin\stm32f10x_gpio.o"
+".\bin\stm32f10x_adc.o"
+".\bin\stm32f10x_tim.o"
+".\bin\stm32f10x_fsmc.o"
+".\bin\misc.o"
+".\bin\stm32f10x_exti.o"
+".\bin\stm32f10x_spi.o"
+".\bin\init.o"
+".\bin\main.o"
+".\bin\misc_func.o"
+".\bin\lcdcmd.o"
+".\bin\primitives.o"
+".\bin\oscilloscope.o"
+".\bin\font.o"
+".\bin\touch.o"
+".\bin\sram.o"
+".\bin\mainmenu.o"
+".\bin\math_func.o"
+--strict --scatter ".\bin\piezo.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\lst\piezo.map" -o .\bin\piezo.axf

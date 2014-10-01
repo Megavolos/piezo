@@ -1,0 +1,17 @@
+.\bin\init.o: src\init.c
+.\bin\init.o: .\inc\init.h
+.\bin\init.o: .\SPL\inc\stm32f10x_gpio.h
+.\bin\init.o: .\CMSIS\DeviceSupport\ST\STM32F10x\stm32f10x.h
+.\bin\init.o: .\CMSIS\CoreSupport\core_cm3.h
+.\bin\init.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\bin\init.o: .\CMSIS\DeviceSupport\ST\STM32F10x\system_stm32f10x.h
+.\bin\init.o: .\CMSIS\stm32f10x_conf.h
+.\bin\init.o: .\SPL\inc\stm32f10x_fsmc.h
+.\bin\init.o: .\SPL\inc\stm32f10x_rcc.h
+.\bin\init.o: .\SPL\inc\stm32f10x_adc.h
+.\bin\init.o: .\SPL\inc\stm32f10x_tim.h
+.\bin\init.o: .\SPL\inc\stm32f10x_exti.h
+.\bin\init.o: .\SPL\inc\misc.h
+.\bin\init.o: .\inc\misc_func.h
+.\bin\init.o: .\inc\lcdcmd.h
+.\bin\init.o: .\SPL\inc\stm32f10x_spi.h
