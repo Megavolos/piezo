@@ -526,6 +526,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\math_func.c</FilePath>
             </File>
+            <File>
+              <FileName>gui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\gui.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

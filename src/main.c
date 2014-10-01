@@ -1,8 +1,6 @@
 /*******************************************************************/
 #include "main.h"
-
 unsigned char a=0,_it0=0,_it1=0,_it2=0,_it3=0;
-
 unsigned char	num=0;
 
 void EXTI9_5_IRQHandler(void)
@@ -48,7 +46,8 @@ int main()
 {
 //		unsigned int j;
   
-	
+ 
+
 	  
 	LCD_init();
 	SPI_init();
@@ -57,16 +56,7 @@ int main()
 	EXTI_init();
 	delay_init(72);
 	
-	TopMenu.endX=160;
-	TopMenu.beginY=30;
-	TopMenu.endY=120;
-	TopMenu.bordered=FALSE;
-	TopMenu.bordercolor=YELLOW;
-	TopMenu.borderthickness=5;
-	TopMenu.filled=TRUE;
-	TopMenu.fillcolor=YELLOW;
-	TopMenu.visible=TRUE;
-	TopMenu.rendered=FALSE;
+	
 	
 
 		
@@ -89,7 +79,7 @@ int main()
 		
 	ReadTouchXY();
 	touch_correct(X,Y);
-	draganddrop();
+
 	//sprintf(s,"%4d %4d",d_in_x, d_in_y);
 	//TFT_ShowString(0,100,(u8*)s, BRED);	
 	//plotpx(d_in_x, d_in_y, BLUE);

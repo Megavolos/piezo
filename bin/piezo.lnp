@@ -21,6 +21,7 @@
 ".\bin\sram.o"
 ".\bin\mainmenu.o"
 ".\bin\math_func.o"
+".\bin\gui.o"
 --strict --scatter ".\bin\piezo.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
