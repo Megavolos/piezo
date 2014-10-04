@@ -25,3 +25,4 @@
 .\bin\main.o: .\inc\mainmenu.h
 .\bin\main.o: .\inc\math_func.h
 .\bin\main.o: .\inc\layout.h
+.\bin\main.o: .\inc\gui.h

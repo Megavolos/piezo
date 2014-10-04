@@ -66,9 +66,10 @@ int main()
         // Начальный и конечный адреса по вертикали
         writeLCDCommand(0x0052, 0); 
         writeLCDCommand(0x0053, 319);		
-	clr(0,320,0,240,BLACK);
+	
 	//Calibrate();
-  CalibrDataRead();
+//  CalibrDataRead();
+	GUI_show();
 	
 	//DrawGrid(GREED_BEGINX,GREED_BEGINX,GREED_STEP,GREED_COLOR,GREED_BACKGROUND);
 //TIM3_init();
@@ -77,8 +78,8 @@ int main()
 	{
 		
 		
-	ReadTouchXY();
-	touch_correct(X,Y);
+	//ReadTouchXY();
+	//touch_correct(X,Y);
 
 	//sprintf(s,"%4d %4d",d_in_x, d_in_y);
 	//TFT_ShowString(0,100,(u8*)s, BRED);	

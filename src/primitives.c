@@ -9,25 +9,25 @@ u16 GREED_STEP=20;
 
 
 
-void TFT_ShowChar(u16 x,u16 y,u8 num, u16 color)
+void TFT_ShowChar(u16 x,u16 y,u8 num, u16 color,  u16 bgrnd)
 {       
-#define MAX_CHAR_POSX 232
-#define MAX_CHAR_POSY 304 
+#define MAX_CHAR_POSY 232
+#define MAX_CHAR_POSX 304 
     u8 temp;
     u8 pos,t;      
     if(x>MAX_CHAR_POSX||y>MAX_CHAR_POSY)return;
     //Йи¶ЁТ»ёцЧЦ·ыЛщХјµДґуРЎ 
     //їЄ±ЩїХјд
 	  
-  writeLCDCommand(32, x);
-  writeLCDCommand(33, x+11);
+  writeLCDCommand(32, y);
+  writeLCDCommand(33, y+11);
 	
-	writeLCDCommand(0x0050, x); // Horizontal GRAM Start Address
-	writeLCDCommand(0x0051, x+11); // Horizontal GRAM End Address
-	writeLCDCommand(0x0052, y); // Vertical GRAM Start Address
-	writeLCDCommand(0x0053, y+5); // Vertical GRAM Start Address	 
-	writeLCDCommand(32, x);
-    writeLCDCommand(33, y);	// 
+	writeLCDCommand(0x0050, y); // Horizontal GRAM Start Address
+	writeLCDCommand(0x0051, y+11); // Horizontal GRAM End Address
+	writeLCDCommand(0x0052, x); // Vertical GRAM Start Address
+	writeLCDCommand(0x0053, x+5); // Vertical GRAM Start Address	 
+	writeLCDCommand(32, y);
+    writeLCDCommand(33, x);	// 
 	*(uint16_t *) (LCD_REG) = 34;
    
    
@@ -43,7 +43,7 @@ void TFT_ShowChar(u16 x,u16 y,u8 num, u16 color)
 	    for(t=0;t<6;t++)
 	    {                 
 	        if(temp&0x01)writeLCDData(color);
-	        else writeLCDData(0x0);//°ЧЙ«    
+	        else writeLCDData(bgrnd);//°ЧЙ«    
 	        temp>>=1; 
 	    }
 	}
@@ -55,14 +55,14 @@ void TFT_ShowChar(u16 x,u16 y,u8 num, u16 color)
 }  	 
 
 
-void TFT_ShowString(u16 x,u16 y,const u8 *p, u16 color)
+void TFT_ShowString(u16 x,u16 y,const u8 *p, u16 color, u16 bgrnd)
 {         
     while(*p!='\0')
     {       
-        if(y>MAX_CHAR_POSY){y=0;x+=12;}
-        if(x>MAX_CHAR_POSX){x=y=0;}
-        TFT_ShowChar(x,y,*p, color);
-        y+=6;
+        if(x>MAX_CHAR_POSX){x=0;y+=12;}
+        if(y>MAX_CHAR_POSY){y=x=0;}
+        TFT_ShowChar(x,y,*p, color, LIGHTGRAY1);
+        x+=6;
         p++;
     }  
 }

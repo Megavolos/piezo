@@ -15,6 +15,7 @@
 #include "misc.h"
 #include "touch.h"
 #include "mainmenu.h"
+#include "gui.h"
 
 
 

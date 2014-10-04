@@ -4,57 +4,99 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Михаил\Documents\GitHub\STM32\piezo\test.uvproj
-Project File Date:  10/01/2014
+Project File Date:  10/02/2014
 
 <h2>Output:</h2>
 Build target 'STM32'
-compiling main.c...
-compiling mainmenu.c...
+compiling gui.c...
 linking...
-Program Size: Code=14724 RO-data=1476 RW-data=92 ZI-data=1644  
+Program Size: Code=8922 RO-data=1478 RW-data=52 ZI-data=1700  
 FromELF: creating hex file...
 ".\bin\piezo.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\Михаил\\Documents\\GitHub\\STM32\\piezo\\bin\\piezo.axf" 
+Set JLink Project File to "C:\Users\Михаил\Documents\GitHub\STM32\piezo\JLinkSettings.ini"
+* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.82 , compiled Mar 10 2014 19:07:45
+Firmware: J-Link ARM V8 compiled Nov 25 2013 19:20:08
+Hardware: V8.00
+S/N : 99999994 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFULL 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103VE
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
 </pre>
 </body>
 </html>
-inmenu.o and main.o).
-Not enough information to list image symbols.
-Not enough information to list the image map.
-Finished: 2 information, 0 warning and 2 error messages.
-".\bin\piezo.axf" - 2 Error(s), 0 Warning(s).
+ Done.
+Programming Done.
+Verify OK.
+Application running ...
+                      TFT_ShowString(140,160,(u8*)s, GRED);
+src\touch.c(284): error:  #165: too few arguments in function call
+                                TFT_ShowString(140,170,(u8*)s, GRED);
+src\touch.c: 0 warnings, 9 errors
+".\bin\piezo.axf" - 10 Error(s), 0 Warning(s).
 Target not created
-on to list image symbols.
-Not enough information to list the image map.
-Finished: 2 information, 0 warning and 2 error messages.
-".\bin\piezo.axf" - 2 Error(s), 1 Warning(s).
+.c...
+compiling gui.c...
+".\bin\piezo.axf" - 10 Error(s), 0 Warning(s).
 Target not created
-ewline
-  #include "gui.c"
-src\gui.c(1): warning:  #1-D: last line of file ends without a newline
-  #include "gui.c"
-src\gui.c(1): warning:  #1-D: last line of file ends without a newline
-  #include "gui.c"
-src\gui.c(1): warning:  #1-D: last line of file ends without a newline
-  #include "gui.c"
-src\gui.c(1): warning:  #1-D: last line of file ends without a newline
-  #include "gui.c"
-src\gui.c(1): error:  #3: #include file "src\gui.c" includes itself
-  #include "gui.c"
-src\gui.c: 10 warnings, 1 error
-".\bin\piezo.axf" - 1 Error(s), 10 Warning(s).
-Target not created
--D: last line of file ends without a newline
-  #include "gui.c"
-src\gui.c(1): warning:  #1-D: last line of file ends without a newline
-  #include "gui.c"
-src\gui.c(1): warning:  #1-D: last line of file ends without a newline
-  #include "gui.c"
-src\gui.c(1): warning:  #1-D: last line of file ends without a newline
-  #include "gui.c"
-src\gui.c(1): warning:  #1-D: last line of file ends without a newline
-  #include "gui.c"
-src\gui.c(1): error:  #3: #include file "src\gui.c" includes itself
-  #include "gui.c"
-src\gui.c: 10 warnings, 1 error
-".\bin\piezo.axf" - 1 Error(s), 15 Warning(s).
-Target not created
+Load "C:\\Users\\Михаил\\Documents\\GitHub\\STM32\\piezo\\bin\\piezo.axf" 
+Set JLink Project File to "C:\Users\Михаил\Documents\GitHub\STM32\piezo\JLinkSettings.ini"
+* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.82 , compiled Mar 10 2014 19:07:45
+Firmware: J-Link ARM V8 compiled Nov 25 2013 19:20:08
+Hardware: V8.00
+S/N : 99999994 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFULL 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103VE
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...

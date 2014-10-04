@@ -6,7 +6,7 @@ u32 touch_time_count=0;
 u16 x_prev,y_prev;
 
 
-void menu_rect_init (TWindow_with_menu *menu, u16 _beginX, u16 _endX,u16 _beginY, u16 _endY, char _bordered, char _bordercolor, char _borderthickness, char _filled, char _fillcolor, u8 _priority)
+void SetupRectangle (Rectangle *menu, u16 _beginX, u16 _endX,u16 _beginY, u16 _endY, char _bordered, u16 _bordercolor, char _borderthickness, char _filled, u16 _fillcolor, u8 _priority)
 {
 	menu->beginX=_beginX;
 	menu->endX=_endX;
@@ -20,37 +20,16 @@ void menu_rect_init (TWindow_with_menu *menu, u16 _beginX, u16 _endX,u16 _beginY
 	menu->visible=FALSE;
 	menu->rendered=FALSE;
 	menu->priority=_priority;
-	sprintf(menu->window_label,Window1_label);
-	sprintf(menu->menu1_label,Window1_menu1_label);
+
 }
 
 
-void drop_down_menu_init (TWindow1_menu1 *menu)
-{
-	sprintf(menu->line1_label,Window1_menu1_line1_label);
-}
 
-void draganddrop (TWindow_with_menu *menu)
+
+
+void DrawRectangle(Rectangle *rect)
 {
-	char dx=0,dy=0;
 	
-  if ((d_in_x>=menu->beginX)&&(d_in_x<=menu->endX)&&(d_in_y>=menu->beginY)&&(d_in_y<=menu->endY)&&(DRAG_DELAY==(touch_time_count++)))
-	{
-		touch_time_count=0;
-		dx=d_in_x-x_prev; 
-		dy=d_in_y-y_prev;
-		x_prev=d_in_x;
-		y_prev=d_in_y;
-	}
-	menu->beginX+=dx;
-	menu->endX+=dx;
-	menu->beginY+=dy;
-	menu->endY+=dy;
-	DrawWindowWithMenu(menu);
-}
-
-void DrawWindowWithMenu(TWindow_with_menu *rect)
-{
 	u16 temp,i;
 	//******************************//
 	//Рисовать будем слева направо. //
@@ -68,8 +47,8 @@ void DrawWindowWithMenu(TWindow_with_menu *rect)
 		rect->endY=rect->beginY;
 		rect->beginY=temp;
 	}
-	if ((rect->bordered==FALSE)&(rect->filled==FALSE)) return; //если нет заливки и нет краев, то нечего рисовать
-	if (rect->visible==FALSE) return;
+	if ((rect->bordered==FALSE)&(rect->filled==FALSE)) {rect->rendered=FALSE; return;} //если нет заливки и нет краев, то нечего рисовать
+	if (rect->visible==FALSE) {rect->rendered=FALSE; return;}
 	//************************Если просто края без заливки*****************************
 	if ((rect->bordered==TRUE)&(rect->filled==FALSE))          
 	{
@@ -115,5 +94,5 @@ void DrawWindowWithMenu(TWindow_with_menu *rect)
 		}		
 	}	
 	//*********************************************************************************
-	
+	rect->rendered=TRUE;
 }
