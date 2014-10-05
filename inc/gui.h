@@ -7,5 +7,7 @@
 #include "primitives.h"
 
 void GUI_show(void);
+void GUI_Draw_top_control(void);
+void GUI_Draw_right_control(void);
 
 #endif

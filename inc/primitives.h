@@ -4,6 +4,7 @@
 #include "stm32f10x.h"
 #include "font.h"
 #include "lcdcmd.h"
+#include "layout.h"
 
 
 
@@ -20,6 +21,10 @@
 #define WHITE 0xFFFF
 #define ROYALBLUE 0x435C
 #define LIGHTGRAY1 0xF79E
+#define GRAY 0x8410
+#define DARKORANGE 0xFC60
+#define ORANGE 0xFD20
+#define GOLD 0xFEA0
 #define GREED_BEGINX 0
 #define GREED_BEGINY 49
 
@@ -33,7 +38,7 @@ extern u16 GREED_STEP;
 
 
 void plotpx(unsigned int X, unsigned int Y, unsigned int color); 
-void DrawGrid (u16 beginx, u16 beginy,u16 step, u16 Color, u16 BgrColor);
+void DrawGrid (Grid *grid);
 void TFT_ShowString(u16 x,u16 y,const u8 *p, u16 color, u16 bgrnd);
 void TFT_ShowChar(u16 x,u16 y,u8 num, u16 color,  u16 bgrnd);
 void clr(int x1, int x2, int y1, int y2, unsigned int color );

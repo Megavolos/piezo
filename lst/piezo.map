@@ -65,9 +65,9 @@ Section Cross References
     sram.o(.text) refers to stm32f10x_spi.o(.text) for SPI_I2S_GetFlagStatus
     sram.o(.text) refers to stm32f10x_gpio.o(.text) for GPIO_ResetBits
     mainmenu.o(.text) refers to primitives.o(.text) for DrawLine
-    gui.o(.text) refers to primitives.o(.text) for clr
     gui.o(.text) refers to mainmenu.o(.text) for SetupRectangle
-    gui.o(.text) refers to gui.o(.bss) for top
+    gui.o(.text) refers to primitives.o(.text) for DrawLine
+    gui.o(.text) refers to gui.o(.bss) for green
     __2sprintf.o(.text) refers to _printf_char_common.o(.text) for _printf_char_common
     __2sprintf.o(.text) refers to _sputc.o(.text) for _sputc
     noretval__2sprintf.o(.text) refers to _printf_char_common.o(.text) for _printf_char_common
@@ -247,9 +247,9 @@ Removing Unused input sections from the image.
     Removing touch.o(.data), (40 bytes).
     Removing sram.o(.text), (460 bytes).
     Removing mainmenu.o(.data), (8 bytes).
-    Removing math_func.o(.text), (14 bytes).
+    Removing math_func.o(.text), (78 bytes).
 
-12 unused section(s) (total 8620 bytes) removed from the image.
+12 unused section(s) (total 8684 bytes) removed from the image.
 
 ==============================================================================
 
@@ -424,29 +424,29 @@ Image Symbol Table
     .text                                    0x08001b38   Section        0  misc_func.o(.text)
     .text                                    0x08001bb8   Section        0  lcdcmd.o(.text)
     .text                                    0x08001bd0   Section        0  primitives.o(.text)
-    .text                                    0x08001f34   Section        0  mainmenu.o(.text)
-    .text                                    0x08002118   Section        0  gui.o(.text)
-    .text                                    0x08002398   Section        0  heapauxi.o(.text)
-    .text                                    0x0800239e   Section       74  sys_stackheap_outer.o(.text)
-    .text                                    0x080023e8   Section        0  exit.o(.text)
-    .text                                    0x080023f4   Section        8  libspace.o(.text)
-    .text                                    0x080023fc   Section        0  sys_exit.o(.text)
-    .text                                    0x08002408   Section        2  use_no_semi.o(.text)
-    .constdata                               0x0800240a   Section     1140  font.o(.constdata)
-    .text                                    0x0800240a   Section        0  indicate_semi.o(.text)
+    .text                                    0x08001efc   Section        0  mainmenu.o(.text)
+    .text                                    0x0800211c   Section        0  gui.o(.text)
+    .text                                    0x08002734   Section        0  heapauxi.o(.text)
+    .text                                    0x0800273a   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x08002784   Section        0  exit.o(.text)
+    .text                                    0x08002790   Section        8  libspace.o(.text)
+    .text                                    0x08002798   Section        0  sys_exit.o(.text)
+    .text                                    0x080027a4   Section        2  use_no_semi.o(.text)
+    .constdata                               0x080027a6   Section     1140  font.o(.constdata)
+    .text                                    0x080027a6   Section        0  indicate_semi.o(.text)
     .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
     .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
     ADCPrescTable                            0x20000024   Data           4  stm32f10x_rcc.o(.data)
     .data                                    0x20000028   Section        6  main.o(.data)
     .data                                    0x2000002e   Section        4  misc_func.o(.data)
-    .bss                                     0x20000034   Section       66  gui.o(.bss)
-    .bss                                     0x20000078   Section       96  libspace.o(.bss)
-    HEAP                                     0x200000d8   Section      512  startup_stm32f10x_hd.o(HEAP)
-    Heap_Mem                                 0x200000d8   Data         512  startup_stm32f10x_hd.o(HEAP)
-    STACK                                    0x200002d8   Section     1024  startup_stm32f10x_hd.o(STACK)
-    Stack_Mem                                0x200002d8   Data        1024  startup_stm32f10x_hd.o(STACK)
-    __initial_sp                             0x200006d8   Data           0  startup_stm32f10x_hd.o(STACK)
+    .bss                                     0x20000034   Section       84  gui.o(.bss)
+    .bss                                     0x20000088   Section       96  libspace.o(.bss)
+    HEAP                                     0x200000e8   Section      512  startup_stm32f10x_hd.o(HEAP)
+    Heap_Mem                                 0x200000e8   Data         512  startup_stm32f10x_hd.o(HEAP)
+    STACK                                    0x200002e8   Section     1024  startup_stm32f10x_hd.o(STACK)
+    Stack_Mem                                0x200002e8   Data        1024  startup_stm32f10x_hd.o(STACK)
+    __initial_sp                             0x200006e8   Data           0  startup_stm32f10x_hd.o(STACK)
 
     Global Symbols
 
@@ -728,30 +728,33 @@ Image Symbol Table
     writeLCDCommand                          0x08001bb9   Thumb Code    12  lcdcmd.o(.text)
     writeLCDData                             0x08001bc5   Thumb Code     6  lcdcmd.o(.text)
     TFT_ShowChar                             0x08001bd1   Thumb Code   220  primitives.o(.text)
-    TFT_ShowString                           0x08001cad   Thumb Code    76  primitives.o(.text)
-    DrawGrid                                 0x08001cf9   Thumb Code   138  primitives.o(.text)
-    clr                                      0x08001d83   Thumb Code    70  primitives.o(.text)
-    plotpx                                   0x08001dc9   Thumb Code    40  primitives.o(.text)
-    DrawLine                                 0x08001df1   Thumb Code   210  primitives.o(.text)
-    DrawCross                                0x08001ec3   Thumb Code   108  primitives.o(.text)
-    SetupRectangle                           0x08001f35   Thumb Code    56  mainmenu.o(.text)
-    DrawRectangle                            0x08001f6d   Thumb Code   428  mainmenu.o(.text)
-    GUI_show                                 0x08002119   Thumb Code   564  gui.o(.text)
-    __use_two_region_memory                  0x08002399   Thumb Code     2  heapauxi.o(.text)
-    __rt_heap_escrow$2region                 0x0800239b   Thumb Code     2  heapauxi.o(.text)
-    __rt_heap_expand$2region                 0x0800239d   Thumb Code     2  heapauxi.o(.text)
-    __user_setup_stackheap                   0x0800239f   Thumb Code    74  sys_stackheap_outer.o(.text)
-    exit                                     0x080023e9   Thumb Code    12  exit.o(.text)
-    __user_libspace                          0x080023f5   Thumb Code     8  libspace.o(.text)
-    __user_perproc_libspace                  0x080023f5   Thumb Code     0  libspace.o(.text)
-    __user_perthread_libspace                0x080023f5   Thumb Code     0  libspace.o(.text)
-    _sys_exit                                0x080023fd   Thumb Code     8  sys_exit.o(.text)
-    __I$use$semihosting                      0x08002409   Thumb Code     0  use_no_semi.o(.text)
-    __use_no_semihosting_swi                 0x08002409   Thumb Code     2  use_no_semi.o(.text)
-    __semihosting_library_function           0x0800240b   Thumb Code     0  indicate_semi.o(.text)
-    asc2_1206                                0x0800240a   Data        1140  font.o(.constdata)
-    Region$$Table$$Base                      0x08002880   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080028a0   Number         0  anon$$obj.o(Region$$Table)
+    TFT_ShowString                           0x08001cad   Thumb Code    74  primitives.o(.text)
+    plotpx                                   0x08001cf7   Thumb Code    40  primitives.o(.text)
+    DrawGrid                                 0x08001d1f   Thumb Code    84  primitives.o(.text)
+    clr                                      0x08001d73   Thumb Code    70  primitives.o(.text)
+    DrawLine                                 0x08001db9   Thumb Code   210  primitives.o(.text)
+    DrawCross                                0x08001e8b   Thumb Code   108  primitives.o(.text)
+    SetupRectangle                           0x08001efd   Thumb Code    60  mainmenu.o(.text)
+    SetupGrid                                0x08001f39   Thumb Code    56  mainmenu.o(.text)
+    DrawRectangle                            0x08001f71   Thumb Code   428  mainmenu.o(.text)
+    GUI_Draw_top_control                     0x0800211d   Thumb Code   296  gui.o(.text)
+    GUI_Draw_right_control                   0x08002245   Thumb Code   420  gui.o(.text)
+    GUI_show                                 0x080023e9   Thumb Code   764  gui.o(.text)
+    __use_two_region_memory                  0x08002735   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x08002737   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x08002739   Thumb Code     2  heapauxi.o(.text)
+    __user_setup_stackheap                   0x0800273b   Thumb Code    74  sys_stackheap_outer.o(.text)
+    exit                                     0x08002785   Thumb Code    12  exit.o(.text)
+    __user_libspace                          0x08002791   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x08002791   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x08002791   Thumb Code     0  libspace.o(.text)
+    _sys_exit                                0x08002799   Thumb Code     8  sys_exit.o(.text)
+    __I$use$semihosting                      0x080027a5   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x080027a5   Thumb Code     2  use_no_semi.o(.text)
+    __semihosting_library_function           0x080027a7   Thumb Code     0  indicate_semi.o(.text)
+    asc2_1206                                0x080027a6   Data        1140  font.o(.constdata)
+    Region$$Table$$Base                      0x08002c1c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08002c3c   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
     a                                        0x20000028   Data           1  main.o(.data)
@@ -765,8 +768,9 @@ Image Symbol Table
     top                                      0x20000034   Data          22  gui.o(.bss)
     red                                      0x2000004a   Data          22  gui.o(.bss)
     green                                    0x20000060   Data          22  gui.o(.bss)
-    __libspace_start                         0x20000078   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x200000d8   Data           0  libspace.o(.bss)
+    grid                                     0x20000076   Data          18  gui.o(.bss)
+    __libspace_start                         0x20000088   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x200000e8   Data           0  libspace.o(.bss)
 
 
 
@@ -776,9 +780,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000028d4, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002c70, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x000028a0, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00002c3c, Max: 0x00080000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -840,22 +844,22 @@ Memory Map of the image
     0x08001ac4   0x00000074   Code   RO          211    .text               main.o
     0x08001b38   0x00000080   Code   RO          265    .text               misc_func.o
     0x08001bb8   0x00000018   Code   RO          283    .text               lcdcmd.o
-    0x08001bd0   0x00000364   Code   RO          295    .text               primitives.o
-    0x08001f34   0x000001e4   Code   RO          375    .text               mainmenu.o
-    0x08002118   0x00000280   Code   RO          406    .text               gui.o
-    0x08002398   0x00000006   Code   RO          455    .text               c_w.l(heapauxi.o)
-    0x0800239e   0x0000004a   Code   RO          527    .text               c_w.l(sys_stackheap_outer.o)
-    0x080023e8   0x0000000c   Code   RO          529    .text               c_w.l(exit.o)
-    0x080023f4   0x00000008   Code   RO          537    .text               c_w.l(libspace.o)
-    0x080023fc   0x0000000c   Code   RO          596    .text               c_w.l(sys_exit.o)
-    0x08002408   0x00000002   Code   RO          607    .text               c_w.l(use_no_semi.o)
-    0x0800240a   0x00000000   Code   RO          609    .text               c_w.l(indicate_semi.o)
-    0x0800240a   0x00000474   Data   RO          331    .constdata          font.o
-    0x0800287e   0x00000002   PAD
-    0x08002880   0x00000020   Data   RO          661    Region$$Table       anon$$obj.o
+    0x08001bd0   0x0000032c   Code   RO          295    .text               primitives.o
+    0x08001efc   0x00000220   Code   RO          375    .text               mainmenu.o
+    0x0800211c   0x00000618   Code   RO          406    .text               gui.o
+    0x08002734   0x00000006   Code   RO          455    .text               c_w.l(heapauxi.o)
+    0x0800273a   0x0000004a   Code   RO          527    .text               c_w.l(sys_stackheap_outer.o)
+    0x08002784   0x0000000c   Code   RO          529    .text               c_w.l(exit.o)
+    0x08002790   0x00000008   Code   RO          537    .text               c_w.l(libspace.o)
+    0x08002798   0x0000000c   Code   RO          596    .text               c_w.l(sys_exit.o)
+    0x080027a4   0x00000002   Code   RO          607    .text               c_w.l(use_no_semi.o)
+    0x080027a6   0x00000000   Code   RO          609    .text               c_w.l(indicate_semi.o)
+    0x080027a6   0x00000474   Data   RO          331    .constdata          font.o
+    0x08002c1a   0x00000002   PAD
+    0x08002c1c   0x00000020   Data   RO          661    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x000006d8, Max: 0x00010000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x000006e8, Max: 0x00010000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -864,11 +868,10 @@ Memory Map of the image
     0x20000028   0x00000006   Data   RW          212    .data               main.o
     0x2000002e   0x00000004   Data   RW          266    .data               misc_func.o
     0x20000032   0x00000002   PAD
-    0x20000034   0x00000042   Zero   RW          407    .bss                gui.o
-    0x20000076   0x00000002   PAD
-    0x20000078   0x00000060   Zero   RW          538    .bss                c_w.l(libspace.o)
-    0x200000d8   0x00000200   Zero   RW            2    HEAP                startup_stm32f10x_hd.o
-    0x200002d8   0x00000400   Zero   RW            1    STACK               startup_stm32f10x_hd.o
+    0x20000034   0x00000054   Zero   RW          407    .bss                gui.o
+    0x20000088   0x00000060   Zero   RW          538    .bss                c_w.l(libspace.o)
+    0x200000e8   0x00000200   Zero   RW            2    HEAP                startup_stm32f10x_hd.o
+    0x200002e8   0x00000400   Zero   RW            1    STACK               startup_stm32f10x_hd.o
 
 
 ==============================================================================
@@ -880,14 +883,14 @@ Image component sizes
 
          0          0          0          0          0       4212   core_cm3.o
          0          0       1140          0          0        408   font.o
-       640         76          0          0         66        779   gui.o
+      1560        164          0          0         84       1300   gui.o
       1232         44          0          0          0      17042   init.o
         24          6          0          0          0        627   lcdcmd.o
-       116         12          0          6          0       1338   main.o
-       484          0          0          0          0       1567   mainmenu.o
+       116         12          0          6          0       1538   main.o
+       544          0          0          0          0       2081   mainmenu.o
        220         20          0          0          0       3269   misc.o
        128          8          0          4          0       1002   misc_func.o
-       868          6          0          0          0       3481   primitives.o
+       812          6          0          0          0       3297   primitives.o
         64         26        304          0       1536        768   startup_stm32f10x_hd.o
        284         10          0          0          0       4203   stm32f10x_exti.o
       1560         54          0          0          0      13059   stm32f10x_fsmc.o
@@ -897,9 +900,9 @@ Image component sizes
        464         32          0         20          0       1763   system_stm32f10x.o
 
     ----------------------------------------------------------------------
-      8652        392       1478         52       1604     300745   Object Totals
+      9576        480       1478         52       1620     301796   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         0          0          2          2          2          0   (incl. Padding)
+         0          0          2          2          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -946,15 +949,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      8922        408       1478         52       1700     299709   Grand Totals
-      8922        408       1478         52       1700     299709   ELF Image Totals
-      8922        408       1478         52          0          0   ROM Totals
+      9846        496       1478         52       1716     300760   Grand Totals
+      9846        496       1478         52       1716     300760   ELF Image Totals
+      9846        496       1478         52          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                10400 (  10.16kB)
-    Total RW  Size (RW Data + ZI Data)              1752 (   1.71kB)
-    Total ROM Size (Code + RO Data + RW Data)      10452 (  10.21kB)
+    Total RO  Size (Code + RO Data)                11324 (  11.06kB)
+    Total RW  Size (RW Data + ZI Data)              1768 (   1.73kB)
+    Total ROM Size (Code + RO Data + RW Data)      11376 (  11.11kB)
 
 ==============================================================================
 

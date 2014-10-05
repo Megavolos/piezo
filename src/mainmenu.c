@@ -6,24 +6,39 @@ u32 touch_time_count=0;
 u16 x_prev,y_prev;
 
 
-void SetupRectangle (Rectangle *menu, u16 _beginX, u16 _endX,u16 _beginY, u16 _endY, char _bordered, u16 _bordercolor, char _borderthickness, char _filled, u16 _fillcolor, u8 _priority)
+void SetupRectangle (Rectangle *rect, u16 _beginX, u16 _endX,u16 _beginY, u16 _endY, char _bordered, u16 _bordercolor, char _borderthickness, char _filled, u16 _fillcolor, u8 _priority)
 {
-	menu->beginX=_beginX;
-	menu->endX=_endX;
-	menu->beginY=_beginY;
-	menu->endY=_endY;
-	menu->bordered=_bordered;
-	menu->bordercolor=_bordercolor;
-	menu->borderthickness=_borderthickness;
-	menu->filled=_filled;
-	menu->fillcolor=_fillcolor;
-	menu->visible=FALSE;
-	menu->rendered=FALSE;
-	menu->priority=_priority;
+	rect->beginX=_beginX;
+	rect->endX=_endX;
+	rect->beginY=_beginY;
+	rect->endY=_endY;
+	rect->bordered=_bordered;
+	rect->bordercolor=_bordercolor;
+	rect->borderthickness=_borderthickness;
+	rect->filled=_filled;
+	rect->fillcolor=_fillcolor;
+	rect->visible=TRUE;
+	rect->rendered=FALSE;
+	rect->priority=_priority;
 
 }
 
 
+void SetupGrid (Grid *grid, u16 _beginX, u16 _endX,u16 _beginY, u16 _endY, u16 _stepX, u16 _stepY, u16 gridcolor,  u16 backcolor, u8 _priority)
+{
+	grid->beginX=_beginX;
+	grid->endX=_endX;
+	grid->beginY=_beginY;
+	grid->endY=_endY;
+	grid->stepX=_stepX;
+	grid->stepY=_stepY;
+	grid->gridcolor=gridcolor;
+	grid->backcolor=backcolor;
+	grid->visible=TRUE;
+	grid->rendered=FALSE;
+	grid->priority=_priority;
+
+}
 
 
 
@@ -96,3 +111,4 @@ void DrawRectangle(Rectangle *rect)
 	//*********************************************************************************
 	rect->rendered=TRUE;
 }
+

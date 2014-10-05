@@ -19,8 +19,9 @@
 
 //menu_rect_init(...) инициализирует основной прямоугольник меню
 void SetupRectangle (Rectangle *menu, u16 _beginX, u16 _endX,u16 _beginY, u16 _endY, char _bordered, u16 _bordercolor, char _borderthickness, char _filled, u16 _fillcolor, u8 _priority);
-
+void SetupGrid (Grid *grid, u16 _beginX, u16 _endX,u16 _beginY, u16 _endY, u16 _stepX, u16 _stepY, u16 gridcolor,  u16 backcolor, u8 _priority);
 void DrawRectangle(Rectangle *rect);
+
 
 
 

@@ -12,7 +12,7 @@ u16 GREED_STEP=20;
 void TFT_ShowChar(u16 x,u16 y,u8 num, u16 color,  u16 bgrnd)
 {       
 #define MAX_CHAR_POSY 232
-#define MAX_CHAR_POSX 304 
+#define MAX_CHAR_POSX 319 
     u8 temp;
     u8 pos,t;      
     if(x>MAX_CHAR_POSX||y>MAX_CHAR_POSY)return;
@@ -61,43 +61,30 @@ void TFT_ShowString(u16 x,u16 y,const u8 *p, u16 color, u16 bgrnd)
     {       
         if(x>MAX_CHAR_POSX){x=0;y+=12;}
         if(y>MAX_CHAR_POSY){y=x=0;}
-        TFT_ShowChar(x,y,*p, color, LIGHTGRAY1);
+        TFT_ShowChar(x,y,*p, color, bgrnd);
         x+=6;
         p++;
     }  
 }
 
-void DrawGrid (u16 beginx, u16 beginy,u16 step, u16 Color, u16 BgrColor)
+void DrawGrid (Grid *grid)
 {
-	unsigned int x1=0,y1=0,x;
-	y1=beginy;
-	x1=beginx;
-
-	writeLCDCommand(32, beginy);
-  writeLCDCommand(33, beginx);
-	*(uint16_t *) (LCD_REG) = 34;
-	for (x=0; x <= ((320-(beginx+1))*(240-(beginy+1))) ; x++)
+	u16 i,j;
+	for(i=grid->beginX;i<=grid->endX;i++)
 	{
-		if ((!(x1%step)||(!(y1%step)))) 
+		for (j=grid->beginY;j<=grid->endY;j++)
 		{
-			writeLCDData(Color);
+			if (!(j%grid->stepY) || !(i%grid->stepX))
+			{
+				plotpx(i,j,grid->gridcolor);
+			}
+			else
+			{
+				plotpx(i,j,grid->backcolor);
+			}
 		}
-		else
-		{
-			writeLCDData(BgrColor);
-		}
-		x1++;
-		if (x1==320) 
-		{
-			y1++;
-			x1=0;
-		}
-		if (y1==240)
-		{
-			y1=0;
-		}
-		
 	}
+	grid->rendered=TRUE;
 }  
 void clr(int x1, int x2, int y1, int y2, unsigned int color )
 {

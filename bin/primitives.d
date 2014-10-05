@@ -7,3 +7,4 @@
 .\bin\primitives.o: .\CMSIS\stm32f10x_conf.h
 .\bin\primitives.o: .\inc\font.h
 .\bin\primitives.o: .\inc\lcdcmd.h
+.\bin\primitives.o: .\inc\layout.h

@@ -18,11 +18,11 @@
 .\bin\main.o: .\SPL\inc\stm32f10x_spi.h
 .\bin\main.o: .\inc\primitives.h
 .\bin\main.o: .\inc\font.h
+.\bin\main.o: .\inc\layout.h
 .\bin\main.o: .\inc\oscilloscope.h
 .\bin\main.o: .\inc\touch.h
 .\bin\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\bin\main.o: .\inc\sram.h
 .\bin\main.o: .\inc\mainmenu.h
 .\bin\main.o: .\inc\math_func.h
-.\bin\main.o: .\inc\layout.h
 .\bin\main.o: .\inc\gui.h

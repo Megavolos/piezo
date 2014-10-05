@@ -167,9 +167,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>11</LineNumber>
+          <LineNumber>44</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134226332</Address>
+          <Address>134227630</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -178,7 +178,7 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>C:\Users\ГЊГЁГµГ ГЁГ«\Documents\GitHub\STM32\piezo\src\gui.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\piezo\src/gui.c\11</Expression>
+          <Expression>\\piezo\src/gui.c\44</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -186,6 +186,21 @@
           <count>0</count>
           <WinNumber>1</WinNumber>
           <ItemText>ADC_Data</ItemText>
+        </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>triangle,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>2</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>dx13</ItemText>
+        </Ww>
+        <Ww>
+          <count>3</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>dx12</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
@@ -434,7 +449,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>766</TopLine>
+      <TopLine>767</TopLine>
       <CurrentLine>785</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\SPL\src\stm32f10x_spi.c</PathWithFileName>
@@ -466,7 +481,7 @@
       <Focus>0</Focus>
       <ColumnNumber>19</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>220</TopLine>
+      <TopLine>127</TopLine>
       <CurrentLine>128</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\src\init.c</PathWithFileName>
@@ -482,7 +497,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>42</TopLine>
+      <TopLine>46</TopLine>
       <CurrentLine>52</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\src\main.c</PathWithFileName>
@@ -528,10 +543,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>26</ColumnNumber>
+      <ColumnNumber>45</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>13</TopLine>
-      <CurrentLine>26</CurrentLine>
+      <TopLine>58</TopLine>
+      <CurrentLine>77</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\src\primitives.c</PathWithFileName>
       <FilenameWithoutPath>primitives.c</FilenameWithoutPath>
@@ -544,7 +559,7 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>8</ColumnNumber>
+      <ColumnNumber>10</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
       <CurrentLine>29</CurrentLine>
@@ -576,7 +591,7 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>25</ColumnNumber>
+      <ColumnNumber>29</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>270</TopLine>
       <CurrentLine>284</CurrentLine>
@@ -608,10 +623,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>2</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>13</TopLine>
-      <CurrentLine>77</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>41</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\src\mainmenu.c</PathWithFileName>
       <FilenameWithoutPath>mainmenu.c</FilenameWithoutPath>
@@ -626,8 +641,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>5</TopLine>
+      <CurrentLine>19</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\src\math_func.c</PathWithFileName>
       <FilenameWithoutPath>math_func.c</FilenameWithoutPath>
@@ -640,10 +655,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>19</ColumnNumber>
+      <ColumnNumber>33</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>7</TopLine>
-      <CurrentLine>45</CurrentLine>
+      <TopLine>49</TopLine>
+      <CurrentLine>44</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\src\gui.c</PathWithFileName>
       <FilenameWithoutPath>gui.c</FilenameWithoutPath>

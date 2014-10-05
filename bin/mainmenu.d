@@ -8,6 +8,7 @@
 .\bin\mainmenu.o: .\inc\font.h
 .\bin\mainmenu.o: .\inc\primitives.h
 .\bin\mainmenu.o: .\inc\lcdcmd.h
+.\bin\mainmenu.o: .\inc\layout.h
 .\bin\mainmenu.o: .\inc\touch.h
 .\bin\mainmenu.o: .\inc\misc_func.h
 .\bin\mainmenu.o: .\SPL\inc\stm32f10x_spi.h
@@ -16,4 +17,3 @@
 .\bin\mainmenu.o: .\SPL\inc\stm32f10x_exti.h
 .\bin\mainmenu.o: .\inc\sram.h
 .\bin\mainmenu.o: .\inc\math_func.h
-.\bin\mainmenu.o: .\inc\layout.h

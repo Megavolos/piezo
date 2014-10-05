@@ -8,3 +8,4 @@
 .\bin\oscilloscope.o: .\inc\primitives.h
 .\bin\oscilloscope.o: .\inc\font.h
 .\bin\oscilloscope.o: .\inc\lcdcmd.h
+.\bin\oscilloscope.o: .\inc\layout.h

@@ -21,6 +21,19 @@ typedef struct
 	
 } Rectangle;
 
-
-
+typedef struct
+{
+	u16 beginX;
+	u16 endX;
+	u16 beginY;
+	u16 endY;
+	u8 	stepX;
+	u8	stepY;
+	u16	gridcolor;
+	u16	backcolor;
+	u8  visible;
+	u8  rendered;
+	u8  priority;	
+	
+}Grid;
 #endif

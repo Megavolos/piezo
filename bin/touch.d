@@ -11,6 +11,7 @@
 .\bin\touch.o: .\inc\primitives.h
 .\bin\touch.o: .\inc\font.h
 .\bin\touch.o: .\inc\lcdcmd.h
+.\bin\touch.o: .\inc\layout.h
 .\bin\touch.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\bin\touch.o: .\SPL\inc\stm32f10x_exti.h
 .\bin\touch.o: .\inc\sram.h
