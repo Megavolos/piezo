@@ -1,17 +1,15 @@
 #include "gui.h"
-
-Rectangle top,red,green;
+Rectangle top_rectangle,right_rectangle,buttons_right_frame,buttons_top_frame,red,green;
 Grid grid;
 
 void GUI_show()
 {
 	
 	clr(0,320,0,240,WHITE);
-	SetupRectangle(&top,0,319,0 ,26,BORDERED,BLACK,1,FILLED,LIGHTGRAY1,1);
-	top.visible=VISIBLE;
-	DrawRectangle(&top);
-	SetupRectangle(&top,283,319,26 ,239,BORDERED,BLACK,1,FILLED,LIGHTGRAY1,1);
-	DrawRectangle(&top);
+	SetupRectangle(&top_rectangle,0,319,0 ,26,BORDERED,BLACK,1,FILLED,LIGHTGRAY1,1);
+	DrawRectangle(&top_rectangle);
+	SetupRectangle(&right_rectangle,283,319,26 ,239,BORDERED,BLACK,1,FILLED,LIGHTGRAY1,1);
+	DrawRectangle(&right_rectangle);
 
   TFT_ShowString(2,2,"Mode:",BLACK,LIGHTGRAY1);
 	//TFT_ShowString(2,7,"Linear",BLACK,LIGHTGRAY1);
@@ -25,6 +23,7 @@ void GUI_show()
 	TFT_ShowString(157,13,"1200",BLACK,LIGHTGRAY1);
 	TFT_ShowString(210,2,"qty.",BLACK,LIGHTGRAY1);
 	TFT_ShowString(210,13,"10",BLACK,LIGHTGRAY1);
+	DrawLine(241,241,0,26,BLACK);
 	TFT_ShowString(244,2,"RPMmc2",BLACK,LIGHTGRAY1);
 	TFT_ShowString(244,13,"1200",RED,LIGHTGRAY1);
 	TFT_ShowString(285,2,"Freq",BLACK,LIGHTGRAY1);
@@ -43,8 +42,8 @@ void GUI_show()
 	TFT_ShowString(290,225,"STOP",BLACK,RED);
 	SetupGrid(&grid,0,283,26,239,10,10,BLUE,BLACK,1);
 	DrawGrid(&grid);
-	GUI_Draw_right_control();
-	GUI_Draw_top_control();
+//	GUI_Draw_right_control();
+//	GUI_Draw_top_control();
 }
 
 void GUI_Draw_top_control()
@@ -68,10 +67,10 @@ void GUI_Draw_top_control()
 		TFT_ShowChar(green.beginX+9,green.beginY+4,'-',BLACK,GREEN);
 		TFT_ShowChar(red.beginX+9,red.beginY+4,'+',BLACK,RED);
 	}
-	SetupRectangle(&top,45,red.endX,26 ,46,BORDERED,BLACK,1,NOT_FILLED,LIGHTGRAY1,1);
-	top.visible=VISIBLE;
-	DrawRectangle(&top);
-	DrawLine(red.endX,red.endX,0,46,BLACK);
+	SetupRectangle(&buttons_top_frame,45,red.endX,26 ,46,BORDERED,BLACK,1,NOT_FILLED,LIGHTGRAY1,1);
+	buttons_top_frame.visible=VISIBLE;
+	DrawRectangle(&buttons_top_frame);
+	//DrawLine(red.endX,red.endX,0,46,BLACK);
 }
 
 void GUI_Draw_right_control()
@@ -81,8 +80,8 @@ void GUI_Draw_right_control()
 	SetupRectangle(&green,261, 283,46,66,NOT_BORDERED,BLACK,1,FILLED,GREEN,1);
 	DrawRectangle(&green);
 	DrawRectangle(&red);	
-	SetupRectangle(&top,261,283,red.beginY,green.endY,BORDERED,BLACK,1,NOT_FILLED,GREEN,1);
-	DrawRectangle(&top);
+	SetupRectangle(&buttons_right_frame,261,283,red.beginY,green.endY,BORDERED,BLACK,1,NOT_FILLED,GREEN,1);
+	DrawRectangle(&buttons_right_frame);
 	TFT_ShowChar(green.beginX+8,green.beginY+4,'-',BLACK,GREEN);
 	TFT_ShowChar(red.beginX+8,red.beginY+4,'+',BLACK,RED);
 	
@@ -92,8 +91,8 @@ void GUI_Draw_right_control()
 	DrawRectangle(&red);	
 	TFT_ShowChar(green.beginX+8,green.beginY+4,'-',BLACK,GREEN);
 	TFT_ShowChar(red.beginX+8,red.beginY+4,'+',BLACK,RED);
-	SetupRectangle(&top,261,283,red.beginY,green.endY,BORDERED,BLACK,1,NOT_FILLED,GREEN,1);
-	DrawRectangle(&top);
+	SetupRectangle(&buttons_right_frame,261,283,red.beginY,green.endY,BORDERED,BLACK,1,NOT_FILLED,GREEN,1);
+	DrawRectangle(&buttons_right_frame);
 	//SetupRectangle(&top,45,red.endX,26 ,46,BORDERED,BLACK,1,NOT_FILLED,LIGHTGRAY1,1);
 	//top.visible=VISIBLE;
 //	DrawRectangle(&top);

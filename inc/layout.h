@@ -21,7 +21,7 @@ typedef struct
 	
 } Rectangle;
 
-typedef struct
+ typedef struct
 {
 	u16 beginX;
 	u16 endX;
@@ -36,4 +36,6 @@ typedef struct
 	u8  priority;	
 	
 }Grid;
+
+
 #endif

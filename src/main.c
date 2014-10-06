@@ -66,9 +66,9 @@ int main()
         // Начальный и конечный адреса по вертикали
         writeLCDCommand(0x0052, 0); 
         writeLCDCommand(0x0053, 319);		
-	
+		clr(0,320,0,240,BLACK);
 	//Calibrate();
-//  CalibrDataRead();
+  CalibrDataRead();
 	GUI_show();
 	
 	//DrawGrid(GREED_BEGINX,GREED_BEGINX,GREED_STEP,GREED_COLOR,GREED_BACKGROUND);
@@ -77,13 +77,26 @@ int main()
    while(1)
 	{
 		
+		if (_it1==1)
+		{
+			ReadTouchXY();
+			touch_correct(X,Y);
+			if ((d_in_y<=26)&&(d_in_x>=45))
+			{
+				GUI_Draw_top_control();
+			}
+			if ((d_in_y>26) && (d_in_x>=283) && (d_in_y<=106))
+			{
+				GUI_Draw_right_control();
+			}
+		} 
 		
-	//ReadTouchXY();
-	//touch_correct(X,Y);
+//	ReadTouchXY();
+//	touch_correct(X,Y);
 
-	//sprintf(s,"%4d %4d",d_in_x, d_in_y);
-	//TFT_ShowString(0,100,(u8*)s, BRED);	
-	//plotpx(d_in_x, d_in_y, BLUE);
+//	sprintf(s,"%4d %4d",d_in_x, d_in_y);
+//	TFT_ShowString(0,100,(u8*)s, BRED,BLACK);	
+//	plotpx(d_in_x, d_in_y, BLUE);
 
 }
 }

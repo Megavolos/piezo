@@ -22,7 +22,7 @@ u8 read_once(void)
 	delay_us(5);	
 	TCS_SET(1); 	 
 	a>>=3; 
-	X=a;
+	Y=a;
 	delay_us(15);	
 	TCS_SET(0); 
 	delay_us(5);	 
@@ -33,11 +33,11 @@ u8 read_once(void)
 	b|=SPI_ReadByte(0);
 	delay_us(5);	
 	b>>=3; 
-	Y=b;   
+	X=b;   
 
 	TCS_SET(1); 
 
-	Y=4096-Y;
+	X=4096-X;
 	if(X>100&&Y>100&&X<4000&&Y<4000)return 1;
 	else return 0;			                 
 }
@@ -128,8 +128,8 @@ u8 ReadTouchXY ()
 	}
 	void touch_correct (uint32_t in_x,uint32_t in_y)
 {
-        d_in_y = (cali_A * in_x + cali_B * in_y + cali_C) / RESCALE_FACTOR;
-        d_in_x = (cali_D * in_x + cali_E * in_y + cali_F) / RESCALE_FACTOR;
+        d_in_x = (cali_A * in_x + cali_B * in_y + cali_C) / RESCALE_FACTOR;
+        d_in_y = (cali_D * in_x + cali_E * in_y + cali_F) / RESCALE_FACTOR;
 }
 	void Calibrate ()
 		{
@@ -140,22 +140,22 @@ u8 ReadTouchXY ()
 			uint32_t yt1, yt2, yt3;
 			struct Point
 			{
-				u8  X;
+				u16  X;
 				u16 Y;				
 				unsigned int Color;
 			};
 			struct Point cpoint1, cpoint2, cpoint3;
 			
-			cpoint1.X=120;
-			cpoint1.Y=32;
+			cpoint1.X=32;
+			cpoint1.Y=120;
 			cpoint1.Color=RED;
 			
-			cpoint2.X=216;
-			cpoint2.Y=160;
+			cpoint2.X=160;
+			cpoint2.Y=216;
 			cpoint2.Color=GREEN;
 			
-			cpoint3.X=24;
-			cpoint3.Y=288;
+			cpoint3.X=288;
+			cpoint3.Y=24;
 			cpoint3.Color=YELLOW;
 			
 			DrawCross(cpoint1.X,cpoint1.Y,20,cpoint1.Color);

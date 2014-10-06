@@ -3,18 +3,18 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\Михаил\Documents\GitHub\STM32\piezo\test.uvproj
-Project File Date:  10/02/2014
+C:\Users\heavy\Documents\GitHub\piezo\test.uvproj
+Project File Date:  10/06/2014
 
 <h2>Output:</h2>
 Build target 'STM32'
-compiling gui.c...
+compiling main.c...
 linking...
-Program Size: Code=9846 RO-data=1478 RW-data=52 ZI-data=1716  
+Program Size: Code=16908 RO-data=1476 RW-data=92 ZI-data=1796  
 FromELF: creating hex file...
 ".\bin\piezo.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\Михаил\\Documents\\GitHub\\STM32\\piezo\\bin\\piezo.axf" 
-Set JLink Project File to "C:\Users\Михаил\Documents\GitHub\STM32\piezo\JLinkSettings.ini"
+Load "C:\\Users\\heavy\\Documents\\GitHub\\piezo\\bin\\piezo.axf" 
+Set JLink Project File to "C:\Users\heavy\Documents\GitHub\piezo\JLinkSettings.ini"
 * JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
  
 JLink info:
@@ -36,7 +36,7 @@ ROMTableAddr = 0xE00FF003
 Target info:
 ------------
 Device: STM32F103VE
-VTarget = 3.287V
+VTarget = 3.293V
 State of Pins: 
 TCK: 1, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
 Hardware-Breakpoints: 6
@@ -51,45 +51,14 @@ Application running ...
 </pre>
 </body>
 </html>
-cation running ...
- kHz
+oints:          4
+JTAG speed: 2000 kHz
  
 Erase Done.
 Programming Done.
 Verify OK.
 Application running ...
-      triangle->borderthickness=_borderthickness;
-src\mainmenu.c(37): error:  #132: expression must have pointer-to-struct-or-union type
-        triangle->filled=_filled;
-src\mainmenu.c(38): error:  #132: expression must have pointer-to-struct-or-union type
-        triangle->fillcolor=_fillcolor;
-src\mainmenu.c(39): error:  #132: expression must have pointer-to-struct-or-union type
-        triangle->visible=FALSE;
-src\mainmenu.c(40): error:  #132: expression must have pointer-to-struct-or-union type
-        triangle->rendered=FALSE;
-src\mainmenu.c(41): error:  #132: expression must have pointer-to-struct-or-union type
-        triangle->priority=_priority;
-src\mainmenu.c: 0 warnings, 15 errors
-compiling gui.c...
-src\gui.c(29): warning:  #223-D: function "DrawTriangle" declared implicitly
-        DrawTriangle(&triangle1);
-src\gui.c(29): error:  #20: identifier "triangle1" is undefined
-        DrawTriangle(&triangle1);
-src\gui.c: 1 warning, 1 error
-".\bin\piezo.axf" - 16 Error(s), 1 Warning(s).
-Target not created
-nter-to-struct-or-union type
-        triangle->rendered=FALSE;
-src\mainmenu.c(41): error:  #132: expression must have pointer-to-struct-or-union type
-        triangle->priority=_priority;
-src\mainmenu.c: 0 warnings, 16 errors
-compiling gui.c...
-.\inc\mainmenu.h(22): error:  #20: identifier "Triangle" is undefined
-  void SetupTriangle (Triangle *triangle, u16 X1, u16 Y1,u16 X2, u16 Y2, u16 X3, u16 Y3  , char _bordered, u16 _bordercolor, char _borderthickness, char _filled, u16 _fillcolor, u8 _priority);
-src\gui.c(29): warning:  #223-D: function "DrawTriangle" declared implicitly
-        DrawTriangle(&triangle1);
-src\gui.c(29): error:  #20: identifier "triangle1" is undefined
-        DrawTriangle(&triangle1);
-src\gui.c: 1 warning, 2 errors
-".\bin\piezo.axf" - 19 Error(s), 1 Warning(s).
+ap.
+Finished: 2 information, 0 warning and 7 error messages.
+".\bin\piezo.axf" - 7 Error(s), 0 Warning(s).
 Target not created

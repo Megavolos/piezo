@@ -10,4 +10,6 @@ void GUI_show(void);
 void GUI_Draw_top_control(void);
 void GUI_Draw_right_control(void);
 
+extern Rectangle top_rectangle,right_rectangle,buttons_right_frame,buttons_top_frame,red,green;
+extern Grid grid;
 #endif
