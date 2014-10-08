@@ -16,4 +16,6 @@
 .\bin\mainmenu.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\bin\mainmenu.o: .\SPL\inc\stm32f10x_exti.h
 .\bin\mainmenu.o: .\inc\sram.h
+.\bin\mainmenu.o: .\inc\gui.h
+.\bin\mainmenu.o: .\inc\mainmenu.h
 .\bin\mainmenu.o: .\inc\math_func.h

@@ -2,6 +2,7 @@
 #include "main.h"
 unsigned char a=0,_it0=0,_it1=0,_it2=0,_it3=0;
 unsigned char	num=0;
+Variables variables;
 
 void EXTI9_5_IRQHandler(void)
 { //һŜֱޓׁȡPEN?	 
@@ -45,8 +46,10 @@ if (_it1==1)
 int main()
 {
 //		unsigned int j;
-  
  
+ 
+	variables.tdiv=3;
+	variables.vdiv=3;
 
 	  
 	LCD_init();
@@ -69,7 +72,7 @@ int main()
 		clr(0,320,0,240,BLACK);
 	//Calibrate();
   CalibrDataRead();
-	GUI_show();
+	GUI_show(&variables);
 	
 	//DrawGrid(GREED_BEGINX,GREED_BEGINX,GREED_STEP,GREED_COLOR,GREED_BACKGROUND);
 //TIM3_init();
@@ -77,19 +80,7 @@ int main()
    while(1)
 	{
 		
-		if (_it1==1)
-		{
-			ReadTouchXY();
-			touch_correct(X,Y);
-			if ((d_in_y<=26)&&(d_in_x>=45))
-			{
-				GUI_Draw_top_control();
-			}
-			if ((d_in_y>26) && (d_in_x>=283) && (d_in_y<=106))
-			{
-				GUI_Draw_right_control();
-			}
-		} 
+	if(_it1==1) touch_control(&variables);
 		
 //	ReadTouchXY();
 //	touch_correct(X,Y);

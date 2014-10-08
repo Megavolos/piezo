@@ -37,5 +37,26 @@ typedef struct
 	
 }Grid;
 
+ typedef struct
+ {
+	 char label[10];
+	 u16 beginX;
+	 u16	beginY;
+	 u16 fontcolor;
+	 u16 backcolor;
+	 u8  visible;
+	 u8  rendered;
+ }String;
+ 
+ typedef struct
+ {
+	 u8 tdiv;
+	 u8 vdiv;
+	 u8 gstepX;
+	 u8 gstepY;
+	 u8 menu_set;
+	 u8 counter;
+ } Variables;
+
 
 #endif

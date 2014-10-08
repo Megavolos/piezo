@@ -53,7 +53,7 @@ u8 ReadTouchXY ()
 		u8 count2=0;
 		u8 t1=0;
 	
-		delay_ms(50);
+		if (!top_rectangle.rendered) delay_ms(50);
 		a=PEN;
 		
 		while (!a&&count<10)
@@ -303,6 +303,247 @@ void CalibrDataRead ()
 	cali_E=Read_int32_t(0x16);
 	cali_F=Read_int32_t(0x20);			
 }	
+
+void touch_control(Variables *var)
+{
+	char touched_once=1;
+	delay_ms(20);
+	a=PEN;
+	if(a==0)
+	{
+		while (a==0)
+		{
+			if (touched_once)
+			{
+				ReadTouchXY();
+				touch_correct(X,Y);
+				if ((d_in_y<=26)&&(d_in_x>=45))
+				{
+					
+					if (buttons_top_frame.visible==VISIBLE)
+					{
+						buttons_top_frame.visible=INVISIBLE;
+						DrawGrid(&grid_top);
+					}
+					 else if (buttons_top_frame.visible==INVISIBLE)
+					{
+						buttons_top_frame.visible=VISIBLE;
+						GUI_Draw_top_control();
+					}
+				}
+				if (d_in_y>26)
+				{					
+					if ((d_in_x>=283) && (d_in_y<=106))
+					{
+						if (buttons_right_frame.visible==VISIBLE)
+						{
+							buttons_right_frame.visible=INVISIBLE;
+							DrawGrid(&grid_right);
+						}
+						else if (buttons_right_frame.visible==INVISIBLE)
+						{
+							buttons_right_frame.visible=VISIBLE;
+							GUI_Draw_right_control();
+						}
+					}
+					if ((buttons_right_frame.visible==VISIBLE)&&(d_in_x>=261)&&(d_in_x<283))
+					{
+						if (d_in_y<=66)
+						{
+							if (d_in_y<=46)
+							{
+								if (var->counter%2)
+								{
+									if (var->tdiv<3) var->tdiv++;
+
+									if (var->tdiv==1) 
+									{
+										SetupString(&str_right_line3,285,50,"us",LIGHTGRAY1,BLACK);
+										TFT_ShowString(str_right_line3.beginX,str_right_line3.beginY,(u8*)str_right_line3.label,str_right_line3.fontcolor,str_right_line3.backcolor);
+										SetupString(&str_right_line3,285,50,"us",BLACK,LIGHTGRAY1);
+									}
+									if (var->tdiv==2) 
+									{
+										SetupString(&str_right_line3,285,50,"ms",LIGHTGRAY1,BLACK);
+										TFT_ShowString(str_right_line3.beginX,str_right_line3.beginY,(u8*)str_right_line3.label,str_right_line3.fontcolor,str_right_line3.backcolor);
+										SetupString(&str_right_line3,285,50,"ms",BLACK,LIGHTGRAY1);
+									}
+									if (var->tdiv==3) 
+									{
+										SetupString(&str_right_line3,285,50," s",LIGHTGRAY1,BLACK);
+										TFT_ShowString(str_right_line3.beginX,str_right_line3.beginY,(u8*)str_right_line3.label,str_right_line3.fontcolor,str_right_line3.backcolor);
+										SetupString(&str_right_line3,285,50," s",BLACK,LIGHTGRAY1);
+									}	
+
+								}
+								else
+								{
+									grid.stepX++;
+									grid_top.stepX=grid.stepX;
+									grid_right.stepX=grid.stepX;
+									sprintf(s,"%3d",grid.stepX);
+									TFT_ShowString(285,40,(u8*)s,BLACK,LIGHTGRAY1);
+									DrawGrid(&grid);
+									GUI_Draw_right_control();
+								}
+							}
+							else
+							{
+								if (var->counter%2)
+								{
+									if (var->tdiv>1) var->tdiv--;
+									if (var->tdiv==1) 
+									{
+										SetupString(&str_right_line3,285,50,"us",LIGHTGRAY1,BLACK);
+										TFT_ShowString(str_right_line3.beginX,str_right_line3.beginY,(u8*)str_right_line3.label,str_right_line3.fontcolor,str_right_line3.backcolor);
+										SetupString(&str_right_line3,285,50,"us",BLACK,LIGHTGRAY1);
+									}
+									if (var->tdiv==2) 
+									{
+										SetupString(&str_right_line3,285,50,"ms",LIGHTGRAY1,BLACK);
+										TFT_ShowString(str_right_line3.beginX,str_right_line3.beginY,(u8*)str_right_line3.label,str_right_line3.fontcolor,str_right_line3.backcolor);
+										SetupString(&str_right_line3,285,50,"ms",BLACK,LIGHTGRAY1);
+									}
+									if (var->tdiv==3) 
+									{
+										SetupString(&str_right_line3,285,50," s",LIGHTGRAY1,BLACK);
+										TFT_ShowString(str_right_line3.beginX,str_right_line3.beginY,(u8*)str_right_line3.label,str_right_line3.fontcolor,str_right_line3.backcolor);
+										SetupString(&str_right_line3,285,50," s",BLACK,LIGHTGRAY1);
+									}	
+								}
+									else
+									{
+										grid.stepX--;
+										grid_top.stepX=grid.stepX;
+										grid_right.stepX=grid.stepX;
+										sprintf(s,"%3d",grid.stepX);
+										TFT_ShowString(285,40,(u8*)s,BLACK,LIGHTGRAY1);
+										DrawGrid(&grid);
+										GUI_Draw_right_control();
+									}
+							}
+						}
+						if ((d_in_y>66)&&(d_in_y<=106))
+						{
+							
+							if (d_in_y<=86)
+							{
+								if (var->counter%2)
+								{
+									if (var->vdiv<3) var->vdiv++;
+									
+									if (var->vdiv==1) 
+									{
+										SetupString(&str_right_line6,285,90,"mv",LIGHTGRAY1,BLACK);
+										TFT_ShowString(str_right_line6.beginX,str_right_line6.beginY,(u8*)str_right_line6.label,str_right_line6.fontcolor,str_right_line6.backcolor);
+										SetupString(&str_right_line6,285,90,"mv",BLACK,LIGHTGRAY1);
+
+									
+									}
+									if (var->vdiv==2) 
+									{
+										SetupString(&str_right_line6,285,90," v",LIGHTGRAY1,BLACK);
+										TFT_ShowString(str_right_line6.beginX,str_right_line6.beginY,(u8*)str_right_line6.label,str_right_line6.fontcolor,str_right_line6.backcolor);
+										SetupString(&str_right_line6,285,90," v",BLACK,LIGHTGRAY1);
+									}
+									if (var->vdiv==3) 
+									{
+										SetupString(&str_right_line6,285,90,"2v",LIGHTGRAY1,BLACK);
+										TFT_ShowString(str_right_line6.beginX,str_right_line6.beginY,(u8*)str_right_line6.label,str_right_line6.fontcolor,str_right_line6.backcolor);
+										SetupString(&str_right_line6,285,90,"2v",BLACK,LIGHTGRAY1);
+									}	
+
+								}
+								else
+								{
+									grid.stepY++;
+									grid_top.stepY=grid.stepY;
+									grid_right.stepY=grid.stepY;
+									sprintf(s,"%3d",grid.stepY);
+									TFT_ShowString(285,80,(u8*)s,BLACK,LIGHTGRAY1);
+									DrawGrid(&grid);
+									GUI_Draw_right_control();
+								}
+								
+							}
+							else
+							{
+								if (var->counter%2)
+								{
+									if (var->vdiv>1) var->vdiv--;
+									
+									if (var->vdiv==1) 
+									{
+										SetupString(&str_right_line6,285,90,"mv",LIGHTGRAY1,BLACK);
+										TFT_ShowString(str_right_line6.beginX,str_right_line6.beginY,(u8*)str_right_line6.label,str_right_line6.fontcolor,str_right_line6.backcolor);
+										SetupString(&str_right_line3,285,90,"mv",BLACK,LIGHTGRAY1);
+
+									
+									}
+									if (var->vdiv==2) 
+									{
+										SetupString(&str_right_line6,285,90," v",LIGHTGRAY1,BLACK);
+										TFT_ShowString(str_right_line6.beginX,str_right_line6.beginY,(u8*)str_right_line6.label,str_right_line6.fontcolor,str_right_line6.backcolor);
+										SetupString(&str_right_line6,285,90," v",BLACK,LIGHTGRAY1);
+									}
+									if (var->vdiv==3) 
+									{
+										SetupString(&str_right_line6,285,90,"2v",LIGHTGRAY1,BLACK);
+										TFT_ShowString(str_right_line6.beginX,str_right_line6.beginY,(u8*)str_right_line6.label,str_right_line6.fontcolor,str_right_line6.backcolor);
+										SetupString(&str_right_line6,285,90,"2v",BLACK,LIGHTGRAY1);
+									}	
+
+								}
+								else
+								{
+									grid.stepY--;
+									grid_top.stepY=grid.stepY;
+									grid_right.stepY=grid.stepY;
+									sprintf(s,"%3d",grid.stepY);
+									TFT_ShowString(285,80,(u8*)s,BLACK,LIGHTGRAY1);
+									DrawGrid(&grid);
+									GUI_Draw_right_control();
+								}
+							}
+						}							
+					}
+				}
+			if  ((d_in_x>=286)&&(d_in_y>=125)&&(d_in_y<=137))
+			{
+				var->counter++;	
+				if (var->counter==5) var->counter=0;
+				if (var->counter==1)
+				{
+					TFT_ShowString(str_right_line3.beginX,str_right_line3.beginY,(u8*)str_right_line3.label,str_right_line3.backcolor,str_right_line3.fontcolor);
+					TFT_ShowString(str_right_line6.beginX,str_right_line6.beginY,(u8*)str_right_line6.label,str_right_line6.backcolor,str_right_line6.fontcolor);
+				}			
+				if (var->counter==2)
+				{
+					TFT_ShowString(str_right_line3.beginX,str_right_line3.beginY,(u8*)str_right_line3.label,str_right_line3.fontcolor,str_right_line3.backcolor);
+					TFT_ShowString(str_right_line6.beginX,str_right_line6.beginY,(u8*)str_right_line6.label,str_right_line6.fontcolor,str_right_line6.backcolor);
+				}
+				if (var->counter==3)
+				{
+					TFT_ShowString(str_right_line3.beginX,str_right_line3.beginY,(u8*)str_right_line3.label,str_right_line3.backcolor,str_right_line3.fontcolor);
+					TFT_ShowString(str_right_line6.beginX,str_right_line6.beginY,(u8*)str_right_line6.label,str_right_line6.backcolor,str_right_line6.fontcolor);
+				}
+				if (var->counter==4)
+				{
+					TFT_ShowString(str_right_line3.beginX,str_right_line3.beginY,(u8*)str_right_line3.label,str_right_line3.fontcolor,str_right_line3.backcolor);
+					TFT_ShowString(str_right_line6.beginX,str_right_line6.beginY,(u8*)str_right_line6.label,str_right_line6.fontcolor,str_right_line6.backcolor);
+				}
+			
+	
+								
+			}
+			touched_once=0;
+			a=PEN;
+			}
+		}
+	}		
+		
+		_it1=0;		
+}
 
 	
 		

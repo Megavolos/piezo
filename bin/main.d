@@ -23,6 +23,7 @@
 .\bin\main.o: .\inc\touch.h
 .\bin\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\bin\main.o: .\inc\sram.h
-.\bin\main.o: .\inc\mainmenu.h
-.\bin\main.o: .\inc\math_func.h
 .\bin\main.o: .\inc\gui.h
+.\bin\main.o: .\inc\mainmenu.h
+.\bin\main.o: .\inc\touch.h
+.\bin\main.o: .\inc\math_func.h

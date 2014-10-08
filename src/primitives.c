@@ -67,6 +67,8 @@ void TFT_ShowString(u16 x,u16 y,const u8 *p, u16 color, u16 bgrnd)
     }  
 }
 
+
+
 void DrawGrid (Grid *grid)
 {
 	u16 i,j;

@@ -16,6 +16,10 @@
 #include "stdio.h"
 #include "stm32f10x_exti.h"	
 #include "sram.h"
+#include "gui.h"
+#include "layout.h"
+#include "mainmenu.h"
+
 
 
 //u16 SPI_SendByte(u8 byte);
@@ -29,6 +33,7 @@ void CalibrDataRead (void);
 u8 ReadTouchXY (void);
 extern int32_t d_in_x, d_in_y; 
 extern char s[10];
+void touch_control(Variables *var);
 
 
 

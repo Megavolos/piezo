@@ -15,3 +15,7 @@
 .\bin\touch.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\bin\touch.o: .\SPL\inc\stm32f10x_exti.h
 .\bin\touch.o: .\inc\sram.h
+.\bin\touch.o: .\inc\gui.h
+.\bin\touch.o: .\inc\mainmenu.h
+.\bin\touch.o: .\inc\touch.h
+.\bin\touch.o: .\inc\math_func.h

@@ -112,3 +112,23 @@ void DrawRectangle(Rectangle *rect)
 	rect->rendered=TRUE;
 }
 
+void SetupString(String *str,u16 _beginX,u16	_beginY,char _label[10], u16 _fontcolor,u16 _backcolor)
+{
+	str->label[0]=_label[0];
+	str->label[1]=_label[1];
+	str->label[2]=_label[2];
+	str->label[3]=_label[3];
+	str->label[4]=_label[4];
+	str->label[5]=_label[5];
+	str->label[6]=_label[6];
+	str->label[7]=_label[7];
+	str->label[8]=_label[8];
+	str->label[9]=_label[9];
+	str->beginX=_beginX;
+	str->beginY=_beginY;
+	str->fontcolor=_fontcolor;
+	str->backcolor=_backcolor;
+	str->visible=VISIBLE;
+	str->rendered=FALSE;
+
+}
