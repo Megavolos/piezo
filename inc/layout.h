@@ -39,7 +39,7 @@ typedef struct
 
  typedef struct
  {
-	 char label[10];
+	 char label[6];
 	 u16 beginX;
 	 u16	beginY;
 	 u16 fontcolor;
@@ -54,6 +54,14 @@ typedef struct
 	 u8 vdiv;
 	 u8 gstepX;
 	 u8 gstepY;
+	 u8 line1;
+	 u8 line2;
+	 u8 line3;
+	 u8 line4;
+	 u8 line5;
+	 u8 line6;
+	 u8 vrange;
+	 u8 trange;
 	 u8 menu_set;
 	 u8 counter;
  } Variables;

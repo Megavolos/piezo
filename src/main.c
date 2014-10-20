@@ -48,8 +48,7 @@ int main()
 //		unsigned int j;
  
  
-	variables.tdiv=3;
-	variables.vdiv=3;
+
 
 	  
 	LCD_init();

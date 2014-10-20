@@ -120,10 +120,7 @@ void SetupString(String *str,u16 _beginX,u16	_beginY,char _label[10], u16 _fontc
 	str->label[3]=_label[3];
 	str->label[4]=_label[4];
 	str->label[5]=_label[5];
-	str->label[6]=_label[6];
-	str->label[7]=_label[7];
-	str->label[8]=_label[8];
-	str->label[9]=_label[9];
+
 	str->beginX=_beginX;
 	str->beginY=_beginY;
 	str->fontcolor=_fontcolor;
